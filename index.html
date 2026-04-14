@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SpiceJet Virtual</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#ffffff;
+color:#222;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+width:100%;
+top:0;
+background:#c40000;
+color:white;
+display:flex;
+justify-content:space-between;
+padding:15px 8%;
+z-index:1000;
+transition:0.3s;
+}
+
+nav h1{
+font-size:22px;
+letter-spacing:2px;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:url('Screenshot_20260302_162343_com.infiniteflight.dev2.jpg');
+background-size:cover;
+background-position:center;
+opacity:0.2;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+.hero h2{
+font-size:55px;
+animation:fadeUp 2s;
+}
+
+.hero p{
+margin-top:15px;
+font-size:20px;
+}
+
+.hero button{
+margin-top:25px;
+padding:12px 30px;
+border:none;
+background:#c40000;
+color:white;
+font-size:16px;
+border-radius:30px;
+cursor:pointer;
+transition:all 0.3s ease;
+}
+
+.hero button:hover{
+transform:scale(1.1);
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeUp{
+0%{opacity:0;transform:translateY(50px)}
+100%{opacity:1;transform:translateY(0)}
+}
+
+/* SECTION */
+
+.section{
+padding:90px 10%;
+text-align:center;
+}
+
+.section h2{
+font-size:36px;
+margin-bottom:20px;
+color:#c40000;
+}
+
+/* ABOUT */
+
+.about{
+max-width:800px;
+margin:auto;
+font-size:18px;
+line-height:1.6;
+}
+
+/* FLEET */
+
+.fleet{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.plane{
+padding:30px;
+background:#f6f6f6;
+border-radius:12px;
+transition:0.3s;
+}
+
+.plane:hover{
+transform:translateY(-10px);
+}
+
+/* AIRPORTS */
+
+.airports{
+margin-top:20px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:12px;
+}
+
+.airports span{
+background:#FFD700;
+color:#000;
+padding:10px 16px;
+border-radius:8px;
+font-weight:bold;
+}
+
+/* RANKS */
+
+.ranks{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-top:40px;
+}
+
+.rank{
+background:#f6f6f6;
+padding:25px;
+border-radius:10px;
+}
+
+/* STATS */
+
+.stats{
+display:flex;
+justify-content:center;
+gap:60px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.counter{
+font-size:40px;
+color:#c40000;
+font-weight:bold;
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.test{
+background:#f6f6f6;
+padding:25px;
+border-radius:10px;
+}
+
+/* STAFF */
+
+.staff{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.member{
+background:#f6f6f6;
+padding:25px;
+border-radius:10px;
+}
+
+/* FORM */
+
+form{
+max-width:500px;
+margin:auto;
+margin-top:40px;
+}
+
+input,select,textarea{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+textarea{
+resize:none;
+}
+
+form button{
+margin-top:20px;
+padding:12px;
+width:100%;
+border:none;
+background:#c40000;
+color:white;
+font-size:16px;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:80px;
+background:#c40000;
+color:white;
+padding:25px;
+text-align:center;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<h1>✈ SpiceJet Virtual IF</h1>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#fleet">Fleet</a></li>
+<li><a href="#apply">Apply</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+<div class="hero-content">
+<h2>Welcome to SpiceJet Virtual</h2>
+<p>India's virtual airline in Infinite Flight</p>
+<button onclick="document.getElementById('apply').scrollIntoView()">Join Now</button>
+</div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+<h2>About SpiceJet Virtual </h2>
+<p class="about">
+SpiceJet Virtual is a community driven airline for Infinite Flight pilots.  
+We simulate realistic airline operations inspired by SpiceJet.  
+Our pilots fly domestic and international routes with professionalism, realism and teamwork.
+</p>
+</section>
+
+<!-- FLEET -->
+
+<section class="section" id="fleet">
+<h2>Our Fleet</h2>
+
+<div style="display:grid;grid-template-columns:1fr;gap:20px;margin-top:40px;max-width:900px;margin-left:auto;margin-right:auto;">
+
+<div style="background:#f6f6f6;border-radius:12px;overflow:hidden;">
+<img src="file_0000000034c471fdb2d352613a96bfc5.png" style="width:100%;height:auto;display:block;">
+</div>
+
+<div style="background:#f6f6f6;border-radius:12px;overflow:hidden;">
+<img src="file_00000000a7b071f8a8d8d6921f635eb6.png" style="width:100%;height:auto;display:block;">
+</div>
+
+<div style="background:#f6f6f6;border-radius:12px;overflow:hidden;">
+<img src="file_0000000061c071fdae4a6412e38c2b95.png" style="width:100%;height:auto;display:block;">
+</div>
+
+</div>
+</section>
+
+<!-- HUB -->
+
+<section class="section">
+<h2>Our Hub Airport</h2>
+
+<div style="background:#ff4d4d;color:white;padding:25px;border-radius:12px;width:360px;margin:30px auto;font-size:20px;font-weight:600;">
+✈ VABB — Mumbai International Airport
+</div>
+
+<h2 style="margin-top:40px;">Destinations</h2>
+
+<div class="airports">
+<span>VIDP Delhi</span>
+<span>VOBL Bengaluru</span>
+<span>OMDB Dubai</span>
+<span>VEGT Guwahati</span>
+<span>VOMM Chennai</span>
+<span>VAAH Ahmedabad</span>
+<span>VOGO Goa</span>
+<span>VTSP Phuket</span>
+</div>
+</section>
+
+<!-- RANKS -->
+
+<section class="section">
+<h2>Pilot Rank System</h2>
+
+<div class="ranks">
+<div class="rank">Cadet</div>
+<div class="rank">Junior First Officer</div>
+<div class="rank">Senior First Officer</div>
+<div class="rank">Captain</div>
+<div class="rank">Senior Captain</div>
+<div class="rank">Chief Pilot</div>
+<div class="rank">Elite Pilot</div>
+</div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="section">
+<h2>Live Statistics</h2>
+
+<div class="stats">
+
+<div>
+<div class="counter" data-target="30">0</div>
+Pilots
+</div>
+
+<div>
+<div class="counter" data-target="500">0</div>
+Flights
+</div>
+
+<div>
+<div class="counter" data-target="3000">0</div>
+Flight Hours
+</div>
+
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section class="section">
+<h2>What Our Staff Says</h2>
+
+<div class="testimonials">
+<div class="test">Great community and professional pilots.</div>
+<div class="test">Flying here feels like a real airline.</div>
+<div class="test">Amazing staff and friendly environment.</div>
+</div>
+
+</section>
+
+<!-- STAFF -->
+
+<section class="section">
+<h2>Our Staff</h2>
+
+<div class="staff">
+
+<div class="member">
+<h3>Aditya Kushwah</h3>
+<p>CEO</p>
+</div>
+
+<div class="member">
+<h3>Rishikesh</h3>
+<p>COO</p>
+</div>
+
+<div class="member">
+<h3>Trix</h3>
+<p>CFO</p>
+</div>
+
+<div class="member">
+<h3>Jas</h3>
+<p>Recruiter</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- FORM -->
+
+<section class="section" id="apply">
+<h2>Pilot Application</h2>
+
+<form action="https://formsubmit.co/adityakushwah1516@gmail.com" method="POST">
+<input type="text" name="Full Name" placeholder="Full Name" required>
+<input type="email" name="Email" placeholder="Email Address" required>
+<input type="number" name="Age" placeholder="Age" required>
+<input type="text" name="Infinite Flight Grade" placeholder="Infinite Flight Grade" required>
+<input type="number" name="Total Flight Hours" placeholder="Total Flight Hours" required>
+
+<input type="text" name="Discord Username" placeholder="Discord Username" required>
+
+<textarea name="Reason" placeholder="Why do you want to join SpiceJet Virtual?" rows="5" required></textarea>
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="New SpiceJet Virtual Pilot Application">
+
+<button type="submit">JOIN SPICEJET VIRTUAL</button>
+</form>
+
+</section>
+
+<footer>
+© SpiceJet Virtual is an independent Virtual Airline that is not affiliated with Infinite Flight or any real-world aviation service. We have no connection or affiliation with SpiceJet Airlines or any real-world Airline.
+</footer>
+
+<script>
+// NAVBAR SHADOW
+window.addEventListener("scroll", function(){
+document.querySelector("nav").style.boxShadow =
+window.scrollY > 50 ? "0 5px 15px rgba(0,0,0,0.2)" : "none";
+});
+
+// COUNTER
+const counters = document.querySelectorAll('.counter');
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+const counter = entry.target;
+const target = +counter.getAttribute('data-target');
+let count = 0;
+
+const updateCount = () => {
+const increment = target / 100;
+
+if(count < target){
+count += increment;
+counter.innerText = Math.ceil(count) + "+";
+setTimeout(updateCount, 20);
+} else {
+counter.innerText = target + "+";
+}
+};
+
+updateCount();
+observer.unobserve(counter);
+}
+});
+});
+
+counters.forEach(counter => observer.observe(counter));
+</script>
+
+</body>
+  </html>
