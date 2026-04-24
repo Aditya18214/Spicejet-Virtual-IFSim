@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Apply - SpiceJet Virtual</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#ffffff;
+padding-top:60px;
+}
+
+/* NAVBAR */
+nav{
+position:fixed;
+width:100%;
+top:0;
+background:#c40000;
+color:white;
+display:flex;
+justify-content:flex-start;
+align-items:center;
+padding:10px 6%;
+z-index:1000;
+}
+
+nav h1{
+font-size:18px;
+}
+
+/* SECTION */
+.section{
+padding:70px 10%;
+text-align:center;
+}
+
+.section h2{
+color:#c40000;
+font-size:32px;
+}
+
+/* REQUIREMENTS */
+.requirements{
+max-width:600px;
+margin:20px auto;
+text-align:left;
+background:#fff5f5;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.requirements ul{
+padding-left:20px;
+line-height:1.8;
+}
+
+/* FORM */
+.form-box{
+max-width:500px;
+margin:40px auto;
+background:#f6f6f6;
+padding:30px;
+border-radius:15px;
+box-shadow:0 15px 35px rgba(0,0,0,0.1);
+}
+
+input, textarea, select{
+width:100%;
+padding:12px;
+margin-top:12px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:14px;
+outline:none;
+transition:0.3s;
+}
+
+input:focus, textarea:focus, select:focus{
+border-color:#c40000;
+box-shadow:0 0 5px rgba(196,0,0,0.3);
+}
+
+textarea{
+resize:none;
+}
+
+/* CHECKBOX */
+.checkbox{
+margin-top:15px;
+display:flex;
+align-items:center;
+gap:10px;
+font-size:14px;
+}
+
+.checkbox input{
+width:auto;
+}
+
+/* BUTTON */
+button{
+margin-top:20px;
+padding:14px;
+width:100%;
+border:none;
+background:linear-gradient(45deg,#c40000,#ff4d4d);
+color:white;
+font-size:16px;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* FOOTER */
+footer{
+margin-top:60px;
+background:#c40000;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+nav{
+padding:8px 5%;
+}
+nav h1{
+font-size:16px;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+<h1>✈ SpiceJet Virtual IF</h1>
+</nav>
+
+<!-- SECTION -->
+<section class="section">
+
+<h2>Welcome Pilots 👋</h2>
+<p>Please review the requirements before applying.</p>
+
+<!-- REQUIREMENTS -->
+<div class="requirements">
+<ul>
+<li>You must have an Infinite Flight Pro Subscription.</li>
+<li>You must be at least Grade 3.</li>
+<li>Have an active IFC account in good standing.</li>
+<li>You must be able to access Discord.</li>
+<li>You must be at least 13 years old or above.</li>
+<li>You must not be on the IFVARB Blacklist or Watchlist.</li>
+</ul>
+</div>
+
+<h2 style="margin-top:40px;">Pilot Application</h2>
+
+<div class="form-box">
+
+<form action="https://formsubmit.co/adityakushwah1516@gmail.com" method="POST">
+
+<input type="text" name="Full Name" placeholder="Full Name" required>
+
+<input type="email" name="Email" placeholder="Email Address" required>
+
+<input type="number" name="Age" placeholder="Age" required>
+
+<select name="Infinite Flight Grade" required>
+<option value="">Select Infinite Flight Grade</option>
+<option value="Grade 3">Grade 3</option>
+<option value="Grade 4">Grade 4</option>
+<option value="Grade 5">Grade 5</option>
+</select>
+
+<input type="number" name="Total Flight Hours" placeholder="Total Flight Hours" required>
+
+<input type="text" name="Discord Username" placeholder="Discord Username" required>
+
+<textarea name="Reason" placeholder="Why do you want to join SpiceJet Virtual?" rows="5" required></textarea>
+
+<!-- AGREE CHECKBOX -->
+<div class="checkbox">
+<input type="checkbox" required>
+<label>I agree to the above requirements</label>
+</div>
+
+<!-- HIDDEN SETTINGS -->
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="New Pilot Application">
+<input type="hidden" name="_next" value="thankyou.html">
+
+<button type="submit">Submit Application</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+© SpiceJet Virtual is an independent Virtual Airline and not affiliated with any real-world airline.
+</footer>
+
+</body>
+</html>
