@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Route Network - SpiceJet Virtual</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* BODY */
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#ffffff;
+color:#222;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+/* NAVBAR */
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:#c40000;
+color:white;
+display:flex;
+align-items:center;
+padding:10px 6%;
+z-index:1000;
+}
+
+nav h1{
+font-size:18px;
+}
+
+/* MAIN */
+main{
+flex:1;
+padding-top:70px;
+text-align:center;
+}
+
+/* TEXT */
+.heading{
+font-size:34px;
+margin-top:20px;
+color:#c40000;
+}
+
+.subtext{
+max-width:700px;
+margin:10px auto 20px;
+opacity:0.7;
+line-height:1.6;
+color:#444;
+}
+
+/* GLOBE */
+#globeViz{
+width:85%;
+height:65vh;
+margin:auto;
+}
+
+/* INFO BOX */
+.infoBox{
+position:fixed;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+background:rgba(255,255,255,0.95);
+color:#222;
+padding:15px 25px;
+border-radius:12px;
+display:none;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* BUTTON */
+.cta-btn{
+margin-top:25px;
+padding:14px 35px;
+font-size:16px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg,#c40000,#ff4d4d);
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+.cta-btn:hover{
+transform:scale(1.08);
+}
+
+/* FOOTER */
+footer{
+background:#c40000;
+color:white;
+padding:25px;
+text-align:center;
+font-size:14px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+<h1>✈ SpiceJet Virtual IF</h1>
+</nav>
+
+<main>
+
+<h2 class="heading">Our Global Route Network</h2>
+
+<p class="subtext">
+We operate a strong network of domestic and international routes connecting major cities across Asia and the Middle East.  
+Click any airport to view route distance and estimated flight time in real aviation format.
+</p>
+
+<div id="globeViz"></div>
+
+<!-- INFO BOX -->
+<div class="infoBox" id="infoBox"></div>
+
+<!-- BUTTON -->
+<a href="ranks.html">
+<button class="cta-btn">Rank System</button>
+</a>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+© SpiceJet Virtual is an independent Virtual Airline that is not affiliated with Infinite Flight or any real-world aviation service. We have no connection or affiliation with SpiceJet Airlines or any real-world Airline.
+</footer>
+
+<!-- LIBRARIES -->
+<script src="https://unpkg.com/three"></script>
+<script src="https://unpkg.com/globe.gl"></script>
+
+<script>
+
+// HUB
+const hub = { name:"Mumbai (VABB)", lat:19.0896, lng:72.8656 };
+
+// DESTINATIONS
+const airports = [
+{ name:"Delhi (VIDP)", lat:28.5562, lng:77.1000 },
+{ name:"Dubai (OMDB)", lat:25.2532, lng:55.3657 },
+{ name:"Chennai (VOMM)", lat:12.9941, lng:80.1709 },
+{ name:"Goa (VOGO)", lat:15.3800, lng:73.8314 },
+{ name:"Abu Dhabi (OMAA)", lat:24.4539, lng:54.3773 },
+{ name:"Kathmandu (VNKT)", lat:27.6966, lng:85.3591 },
+{ name:"Guwahati (VEGT)", lat:26.1061, lng:91.5859 },
+{ name:"Jaipur (VIJP)", lat:26.8242, lng:75.8122 },
+{ name:"Ahmedabad (VAAH)", lat:23.0734, lng:72.6266 },
+{ name:"Phuket (VTSP)", lat:8.1132, lng:98.3169 },
+{ name:"Najaf (ORNI)", lat:31.9899, lng:44.4043 },
+{ name:"Bangalore (VOBL)", lat:13.1986, lng:77.7066 },
+{ name:"Cochin (VOCI)", lat:10.1520, lng:76.4019 },
+{ name:"Lucknow (VILK)", lat:26.7606, lng:80.8893 },
+{ name:"Sharjah (OMSJ)", lat:25.3286, lng:55.5172 },
+{ name:"Kolkata (VECC)", lat:22.6547, lng:88.4467 },
+{ name:"Surat (VOSR)", lat:21.1141, lng:72.7418 },
+{ name:"Colombo (VCBI)", lat:7.1808, lng:79.8841 }
+];
+
+// ROUTES
+const arcs = airports.map(a => ({
+startLat: hub.lat,
+startLng: hub.lng,
+endLat: a.lat,
+endLng: a.lng
+}));
+
+// DISTANCE (NM)
+function getDistanceNM(lat1, lon1, lat2, lon2){
+const R = 6371;
+const dLat = (lat2-lat1)*Math.PI/180;
+const dLon = (lon2-lon1)*Math.PI/180;
+
+const a =
+Math.sin(dLat/2)**2 +
+Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180) *
+Math.sin(dLon/2)**2;
+
+const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+return (R * c) * 0.539957;
+}
+
+// TIME
+function getFlightTime(nm){
+const speed = 450;
+const hours = nm / speed;
+const h = Math.floor(hours);
+const m = Math.round((hours - h)*60);
+return `${h}h ${m}m`;
+}
+
+// GLOBE
+const globe = Globe()
+(document.getElementById('globeViz'))
+.globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
+
+.arcsData(arcs)
+.arcColor(() => "#ff6b6b")
+.arcAltitude(0.25)
+.arcStroke(1.5)
+.arcDashLength(0.4)
+.arcDashGap(4)
+.arcDashAnimateTime(2000)
+
+.pointsData([hub, ...airports])
+.pointColor(() => '#FFD700')
+.pointAltitude(0.02)
+.pointRadius(0.5)
+
+.pointLabel(d => `<b>${d.name}</b>`)
+
+.onPointClick(d => {
+if(d.name !== hub.name){
+
+const nm = getDistanceNM(hub.lat, hub.lng, d.lat, d.lng);
+const time = getFlightTime(nm);
+
+const box = document.getElementById("infoBox");
+box.innerHTML = `
+<b>Route:</b> Mumbai → ${d.name}<br>
+<b>Distance:</b> ${nm.toFixed(0)} NM<br>
+<b>Time:</b> ${time}
+`;
+
+box.style.display = "block";
+}
+});
+
+// AUTO ROTATE
+globe.controls().autoRotate = true;
+globe.controls().autoRotateSpeed = 0.5;
+
+</script>
+
+</body>
+  </html>
