@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rank System - SpiceJet Virtual</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#ffffff;
+color:#222;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:#c40000;
+color:white;
+display:flex;
+align-items:center;
+padding:10px 6%;
+z-index:1000;
+}
+
+nav h1{
+font-size:18px;
+}
+
+main{
+flex:1;
+padding-top:70px;
+padding-left:8%;
+padding-right:8%;
+}
+
+/* IMAGE */
+.rank-image{
+max-width:700px;
+margin:20px auto;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 15px 35px rgba(0,0,0,0.2);
+transition:0.4s;
+}
+
+.rank-image img{
+width:100%;
+display:block;
+transition:0.4s;
+}
+
+.rank-image:hover img{
+transform:scale(1.05);
+}
+
+/* TEXT */
+.heading{
+font-size:34px;
+color:#c40000;
+margin-bottom:10px;
+}
+
+.description{
+max-width:800px;
+line-height:1.6;
+opacity:0.8;
+margin:20px auto 30px;
+text-align:left;
+}
+
+/* RANKS */
+.ranks{
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.rank-card{
+display:flex;
+align-items:center;
+background:#f6f6f6;
+padding:18px 20px;
+border-radius:12px;
+transition:0.3s;
+gap:20px;
+}
+
+.rank-card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+.star{
+font-size:28px;
+}
+
+.rank-info h3{
+margin:0;
+font-size:18px;
+}
+
+.rank-info p{
+margin-top:5px;
+font-size:14px;
+opacity:0.8;
+}
+
+/* HOURS BADGE */
+.hours{
+margin-top:6px;
+font-size:13px;
+font-weight:500;
+color:#c40000;
+}
+
+/* COLORS */
+.white{color:#bbb;}
+.green{color:#2ecc71;}
+.blue{color:#3498db;}
+.magenta{color:#e056fd;}
+.darkblue{color:#1e3799;}
+.orange{color:#e67e22;}
+.yellow{color:#f1c40f;}
+.red{color:#e74c3c;}
+
+/* BUTTON */
+.cta-btn{
+margin:40px auto;
+display:block;
+padding:14px 35px;
+font-size:16px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg,#c40000,#ff4d4d);
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+.cta-btn:hover{
+transform:scale(1.08);
+}
+
+/* FOOTER */
+footer{
+background:#c40000;
+color:white;
+padding:25px;
+text-align:center;
+font-size:14px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<h1>✈ SpiceJet Virtual</h1>
+</nav>
+
+<main>
+
+<h2 class="heading">Pilot Rank System</h2>
+
+<!-- IMAGE -->
+<div class="rank-image">
+<img src="file_00000000d09871fa9016576956807a13.png">
+</div>
+
+<p class="description">
+Our rank system is designed to simulate real airline progression. As you gain experience and complete flights, you unlock new aircraft, routes, and responsibilities. Each rank represents your growth as a professional pilot within SpiceJet Virtual.
+</p>
+
+<div class="ranks">
+
+<div class="rank-card">
+<div class="star white">★</div>
+<div class="rank-info">
+<h3>Trainee</h3>
+<p>You are a new pilot and will fly domestic routes with the 737 MAX 8.</p>
+<div class="hours">After joining</div>
+</div>
+</div>
+
+<div class="rank-card">
+<div class="star green">★</div>
+<div class="rank-info">
+<h3>Cadet</h3>
+<p>More domestic routes are now unlocked.</p>
+<div class="hours">25 Flight Hours</div>
+</div>
+</div>
+
+<div class="rank-card">
+<div class="star blue">★</div>
+<div class="rank-info">
+<h3>Junior First Officer</h3>
+<p>You have now unlocked the turboprop Dash-8 aircraft.</p>
+<div class="hours">100 Flight Hours</div>
+</div>
+</div>
+
+<div class="rank-card">
+<div class="star magenta">★</div>
+<div class="rank-info">
+<h3>Senior First Officer</h3>
+<p>You can now fly international routes.</p>
+<div class="hours">200 Flight Hours</div>
+</div>
+</div>
+
+<div class="rank-card">
+<div class="star darkblue">★</div>
+<div class="rank-info">
+<h3>Captain</h3>
+<p>You can now fly the Boeing 737-900ER.</p>
+<div class="hours">400 Flight Hours</div>
+</div>
+</div>
+
+<div class="rank-card">
+<div class="star orange">★</div>
+<div class="rank-info">
+<h3>Senior Captain</h3>
+<p>You can now fly all routes and operate every aircraft.</p>
+<div class="hours">800 Flight Hours</div>
+</div>
+</div>
+
+<div class="rank-card">
+<div class="star yellow">★</div>
+<div class="rank-info">
+<h3>Chief Pilot</h3>
+<p>You can now lead and manage a specific flight route.</p>
+<div class="hours">1000 Flight Hours</div>
+</div>
+</div>
+
+<div class="rank-card">
+<div class="star red">★</div>
+<div class="rank-info">
+<h3>Elite Pilot</h3>
+<p>You have become the legendary SpiceJet Virtual pilot and hold one of the highest authorities.</p>
+<div class="hours">2000 Flight Hours</div>
+</div>
+</div>
+
+</div>
+
+<a href="apply.html">
+<button class="cta-btn">Apply Now</button>
+</a>
+
+</main>
+
+<footer>
+© SpiceJet Virtual is an independent Virtual Airline that is not affiliated with Infinite Flight or any real-world aviation service. We have no connection or affiliation with SpiceJet Airlines or any real-world Airline.
+</footer>
+
+</body>
+  </html>
