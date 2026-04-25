@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rank System - SpiceJet Virtual</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* BODY */
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#ffffff;
+color:#222;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+/* NAVBAR */
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:#c40000;
+color:white;
+display:flex;
+align-items:center;
+padding:10px 6%;
+z-index:1000;
+}
+
+nav h1{
+font-size:18px;
+}
+
+/* MAIN */
+main{
+flex:1;
+padding-top:70px;
+padding-left:8%;
+padding-right:8%;
+}
+
+/* HEADING */
+.heading{
+font-size:34px;
+color:#c40000;
+margin-bottom:10px;
+}
+
+/* INTRO TEXT */
+.description{
+max-width:800px;
+line-height:1.6;
+opacity:0.8;
+margin-bottom:30px;
+}
+
+/* RANK LIST */
+.ranks{
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+/* CARD */
+.rank-card{
+display:flex;
+align-items:center;
+background:#f6f6f6;
+padding:18px 20px;
+border-radius:12px;
+transition:0.3s;
+gap:20px;
+}
+
+.rank-card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* LOGO (STAR) */
+.star{
+font-size:28px;
+}
+
+/* CONTENT */
+.rank-info h3{
+margin:0;
+font-size:18px;
+}
+
+.rank-info p{
+margin-top:5px;
+font-size:14px;
+opacity:0.8;
+}
+
+/* COLORS */
+.white{color:#bbb;}
+.green{color:#2ecc71;}
+.blue{color:#3498db;}
+.magenta{color:#e056fd;}
+.darkblue{color:#1e3799;}
+.orange{color:#e67e22;}
+.yellow{color:#f1c40f;}
+.red{color:#e74c3c;}
+
+/* FOOTER */
+footer{
+background:#c40000;
+color:white;
+padding:25px;
+text-align:center;
+font-size:14px;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<h1>✈ SpiceJet Virtual IF</h1>
+</nav>
+
+<main>
+
+<h2 class="heading">Pilot Rank System</h2>
+
+<p class="description">
+Our rank system is designed to simulate real airline progression. As you gain experience and complete flights, you unlock new aircraft, routes, and responsibilities. Each rank represents your growth as a professional pilot within SpiceJet Virtual.
+</p>
+
+<div class="ranks">
+
+<!-- Trainee -->
+<div class="rank-card">
+<div class="star white">★</div>
+<div class="rank-info">
+<h3>Trainee</h3>
+<p>You are a new pilot and will fly domestic routes with the 737 MAX 8.</p>
+</div>
+</div>
+
+<!-- Cadet -->
+<div class="rank-card">
+<div class="star green">★</div>
+<div class="rank-info">
+<h3>Cadet</h3>
+<p>More domestic routes are now unlocked.</p>
+</div>
+</div>
+
+<!-- Junior First Officer -->
+<div class="rank-card">
+<div class="star blue">★</div>
+<div class="rank-info">
+<h3>Junior First Officer</h3>
+<p>You have now unlocked the turboprop Dash-8 aircraft.</p>
+</div>
+</div>
+
+<!-- Senior First Officer -->
+<div class="rank-card">
+<div class="star magenta">★</div>
+<div class="rank-info">
+<h3>Senior First Officer</h3>
+<p>You can now fly international routes.</p>
+</div>
+</div>
+
+<!-- Captain -->
+<div class="rank-card">
+<div class="star darkblue">★</div>
+<div class="rank-info">
+<h3>Captain</h3>
+<p>You can now fly the Boeing 737-900ER.</p>
+</div>
+</div>
+
+<!-- Senior Captain -->
+<div class="rank-card">
+<div class="star orange">★</div>
+<div class="rank-info">
+<h3>Senior Captain</h3>
+<p>You can now fly all routes and operate every aircraft.</p>
+</div>
+</div>
+
+<!-- Chief Pilot -->
+<div class="rank-card">
+<div class="star yellow">★</div>
+<div class="rank-info">
+<h3>Chief Pilot</h3>
+<p>You can now lead and manage a specific flight route.</p>
+</div>
+</div>
+
+<!-- Elite Pilot -->
+<div class="rank-card">
+<div class="star red">★</div>
+<div class="rank-info">
+<h3>Elite Pilot</h3>
+<p>You have become the legendary SpiceJet Virtual pilot and hold one of the highest authorities.</p>
+</div>
+</div>
+
+</div>
+
+</main>
+
+<footer>
+© SpiceJet Virtual is an independent Virtual Airline that is not affiliated with Infinite Flight or any real-world aviation service. We have no connection or affiliation with SpiceJet Airlines or any real-world Airline.
+</footer>
+
+</body>
+  </html>
