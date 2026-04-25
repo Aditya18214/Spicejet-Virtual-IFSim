@@ -29,26 +29,53 @@ flex-direction:column;
 }
 
 main{
-flex:1;
-}
-
-/* NAVBAR */
-nav{
+flex:/* NAVBAR */
+.navbar{
 position:fixed;
-width:100%;
 top:0;
+width:100%;
 background:#c40000;
 color:white;
 display:flex;
-justify-content:flex-start;
 align-items:center;
+justify-content:space-between;
 padding:10px 6%;
 z-index:1000;
 }
 
-nav h1{
+.navbar h1{
 font-size:18px;
+white-space:nowrap;
 }
+
+/* MENU */
+.nav-menu{
+display:flex;
+gap:20px;
+overflow-x:auto;
+scroll-behavior:smooth;
+}
+
+.nav-menu::-webkit-scrollbar{
+display:none;
+}
+
+.nav-menu a{
+color:white;
+text-decoration:none;
+font-size:14px;
+white-space:nowrap;
+padding:6px 12px;
+border-radius:20px;
+transition:0.3s;
+}
+
+.nav-menu a:hover{
+background:rgba(255,255,255,0.2);
+}
+}
+
+
 
 /* HERO */
 .hero{
