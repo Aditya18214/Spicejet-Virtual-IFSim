@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SpiceJet Virtual</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+/* BODY */
+body{
+background:#ffffff;
+color:#222;
+padding-top:60px;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+main{
+flex:1;
+}
+
+/* NAVBAR */
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+background:#c40000;
+color:white;
+display:flex;
+align-items:center;
+padding:10px 6%;
+z-index:1000;
+}
+
+/* LOGO */
+.navbar h1{
+font-size:18px;
+margin-right:30px; /* 🔥 GAP between logo & menu */
+white-space:nowrap;
+}
+
+/* MENU */
+.menu{
+display:flex;
+gap:20px;
+overflow-x:auto;
+scroll-behavior:smooth;
+flex:1; /* pushes menu to right nicely */
+}
+
+/* HIDE SCROLLBAR */
+.menu::-webkit-scrollbar{
+display:none;
+}
+
+/* LINKS */
+.menu a{
+color:white;
+text-decoration:none;
+font-size:14px;
+white-space:nowrap;
+padding:6px 12px;
+border-radius:20px;
+transition:0.3s;
+}
+
+/* HOVER */
+.menu a:hover{
+background:rgba(255,255,255,0.2);
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+background:url('Screenshot_20260302_162343_com.infiniteflight.dev2.jpg');
+background-size:cover;
+background-position:center;
+}
+
+.hero h2{
+font-size:45px;
+}
+
+.hero p{
+margin-top:15px;
+font-size:18px;
+}
+
+/* SECTION */
+.section{
+padding:80px 10%;
+text-align:center;
+}
+
+.section h2{
+color:#c40000;
+margin-bottom:15px;
+}
+
+/* ABOUT */
+.about{
+max-width:800px;
+margin:auto;
+line-height:1.6;
+}
+
+/* STATS */
+.stats{
+display:flex;
+justify-content:center;
+gap:50px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.counter{
+font-size:35px;
+color:#c40000;
+font-weight:bold;
+}
+
+/* STAFF */
+.staff{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.member{
+position:relative;
+border-radius:15px;
+overflow:hidden;
+transition:0.4s;
+cursor:pointer;
+}
+
+.member img{
+width:100%;
+display:block;
+transition:0.4s;
+}
+
+.member::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(45deg,#c40000,#ff4d4d);
+opacity:0;
+transition:0.4s;
+z-index:1;
+}
+
+.member:hover::before{
+opacity:0.25;
+}
+
+.member:hover img{
+transform:scale(1.08);
+}
+
+.member:hover{
+box-shadow:0 15px 35px rgba(196,0,0,0.4);
+}
+
+/* BUTTON */
+.cta-btn{
+margin-top:25px;
+padding:14px 35px;
+font-size:17px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg,#c40000,#ff4d4d);
+color:white;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+.cta-btn:hover{
+transform:scale(1.08);
+box-shadow:0 12px 25px rgba(0,0,0,0.3);
+}
+
+/* FOOTER */
+footer{
+background:#c40000;
+color:white;
+padding:25px;
+text-align:center;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+nav{
+padding:8px 5%;
+}
+nav h1{
+font-size:16px;
+}
+.hero h2{
+font-size:32px;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+  <h1>✈ SpiceJet Virtual</h1>
+
+  <div class="menu">
+    <a href="fleet.html">Fleet</a>
+    <a href="hubs.html">Hubs & Destinations</a>
+    <a href="routes.html">Routes</a>
+    <a href="ranks.html">Ranks</a>
+    <a href="apply.html">Apply</a>
+  </div>
+
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+<div>
+<h2>Welcome to SpiceJet Virtual</h2>
+<p>India's virtual airline in Infinite Flight</p>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+<h2>About Us</h2>
+<p class="about">
+SpiceJet Virtual is a community-driven airline for Infinite Flight pilots. 
+We simulate realistic airline operations with professionalism, teamwork, and realism.
+</p>
+</section>
+
+<!-- STATS -->
+<section class="section">
+<h2>Live Statistics</h2>
+
+<div class="stats">
+
+<div>
+<div class="counter" data-target="30">0</div>
+Pilots
+</div>
+
+<div>
+<div class="counter" data-target="500">0</div>
+Flights
+</div>
+
+<div>
+<div class="counter" data-target="3000">0</div>
+Flight Hours
+</div>
+
+</div>
+
+</section>
+
+<!-- STAFF -->
+<section class="section">
+<h2>Our Staff</h2>
+
+<div class="staff">
+
+<div class="member">
+<img src="D0024F80-A81C-47B7-B8D1-9B3E214AA7D0.jpg">
+</div>
+
+<div class="member">
+<img src="A2842529-E8A3-4077-9D64-7148BE89DAEA.jpg">
+</div>
+
+<div class="member">
+<img src="97B9B72C-04BB-4030-9F4E-BEF78481F501.jpg">
+</div>
+
+<div class="member">
+<img src="IMG_1582.jpg">
+</div>
+
+</div>
+
+</section>
+
+<!-- VIEW FLEET -->
+<section class="section">
+
+<h2>Explore Our Fleet</h2>
+<p>Discover the aircraft that power our virtual airline.</p>
+
+<a href="fleet.html">
+<button class="cta-btn">View Fleet</button>
+</a>
+
+</section>
+
+</main>
+
+<footer>
+© SpiceJet Virtual is an independent Virtual Airline that is not affiliated with Infinite Flight or any real-world aviation service. We have no connection or affiliation with SpiceJet Airlines or any real-world Airline.
+</footer>
+
+<!-- COUNTER SCRIPT -->
+<script>
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+const target = +counter.getAttribute('data-target');
+let count = 0;
+
+const update = () => {
+const increment = target / 100;
+
+if(count < target){
+count += increment;
+counter.innerText = Math.ceil(count) + "+";
+setTimeout(update, 20);
+} else {
+counter.innerText = target + "+";
+}
+};
+
+update();
+});
+</script>
+
+</body>
+  </html>
