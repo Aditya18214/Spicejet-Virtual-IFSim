@@ -29,9 +29,8 @@ flex-direction:column;
 }
 
   
-main{
-flex:/* NAVBAR */
-.navbar{
+<!-- NAVBAR -->
+<nav style="
 position:fixed;
 top:0;
 width:100%;
@@ -42,39 +41,28 @@ align-items:center;
 justify-content:space-between;
 padding:10px 6%;
 z-index:1000;
-}
+">
 
-.navbar h1{
-font-size:18px;
-white-space:nowrap;
-}
+<h1 style="font-size:18px;margin:0;white-space:nowrap;">
+✈ SpiceJet Virtual
+</h1>
 
-/* MENU */
-.nav-menu{
+<div style="
 display:flex;
-gap:20px;
+gap:15px;
 overflow-x:auto;
-scroll-behavior:smooth;
-}
-
-.nav-menu::-webkit-scrollbar{
-display:none;
-}
-
-.nav-menu a{
-color:white;
-text-decoration:none;
-font-size:14px;
 white-space:nowrap;
-padding:6px 12px;
-border-radius:20px;
-transition:0.3s;
-}
+">
 
-.nav-menu a:hover{
-background:rgba(255,255,255,0.2);
-}
-}
+<a href="fleet.html" style="color:white;text-decoration:none;">Fleet</a>
+<a href="hubs.html" style="color:white;text-decoration:none;">Hubs & Destinations</a>
+<a href="routes.html" style="color:white;text-decoration:none;">Routes</a>
+<a href="ranks.html" style="color:white;text-decoration:none;">Ranks</a>
+<a href="apply.html" style="color:white;text-decoration:none;">Apply</a>
+
+</div>
+
+</nav>
 
 
 /* HERO */
