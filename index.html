@@ -137,53 +137,6 @@ color:#c40000;
 font-weight:bold;
 }
 
-/* STAFF */
-.staff{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:25px;
-margin-top:30px;
-}
-
-.member{
-position:relative;
-border-radius:15px;
-overflow:hidden;
-transition:0.4s;
-cursor:pointer;
-}
-
-.member img{
-width:100%;
-display:block;
-transition:0.4s;
-}
-
-.member::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:linear-gradient(45deg,#c40000,#ff4d4d);
-opacity:0;
-transition:0.4s;
-z-index:1;
-}
-
-.member:hover::before{
-opacity:0.25;
-}
-
-.member:hover img{
-transform:scale(1.08);
-}
-
-.member:hover{
-box-shadow:0 15px 35px rgba(196,0,0,0.4);
-}
-
 /* BUTTON */
 .cta-btn{
 margin-top:25px;
@@ -236,7 +189,7 @@ font-size:32px;
 
   <div class="menu">
     <a href="fleet.html">Fleet</a>
-    <a href="hubs.html">Hubs & Destinations</a>
+    <a href="hubs.html">Hubs</a>
     <a href="routes.html">Routes</a>
     <a href="staff.html">Staff</a>
     <a href="ranks.html">Ranks</a>
@@ -259,8 +212,7 @@ font-size:32px;
 <section class="section">
 <h2>About Us</h2>
 <p class="about">
-SpiceJet Virtual is a community-driven airline for Infinite Flight pilots. 
-We simulate realistic airline operations with professionalism, teamwork, and realism.
+SpiceJet Virtual is a dynamic and community-driven virtual airline built for passionate pilots on Infinite Flight who seek realism, professionalism, and an engaging flying experience. Inspired by real-world airline operations, we aim to replicate the structure, discipline, and excitement of commercial aviation while maintaining a friendly and supportive environment. Our pilots operate a diverse fleet across an expanding network of domestic and international routes, connecting major hubs and destinations with precision and teamwork. From beginners taking their first steps in aviation to experienced captains mastering complex operations, SpiceJet Virtual offers a structured rank system, realistic procedures, and continuous growth opportunities. Our dedicated staff ensures smooth operations, organizes events, and supports every pilot in their journey. At SpiceJet Virtual, we don’t just fly routes—we build a community where aviation enthusiasts come together to learn, improve, and experience the thrill of airline flying in the most immersive way possible. ✈️
 </p>
 </section>
 
@@ -289,31 +241,6 @@ Flight Hours
 
 </section>
 
-<!-- STAFF -->
-<section class="section">
-<h2>Our Staff</h2>
-
-<div class="staff">
-
-<div class="member">
-<img src="D0024F80-A81C-47B7-B8D1-9B3E214AA7D0.jpg">
-</div>
-
-<div class="member">
-<img src="A2842529-E8A3-4077-9D64-7148BE89DAEA.jpg">
-</div>
-
-<div class="member">
-<img src="97B9B72C-04BB-4030-9F4E-BEF78481F501.jpg">
-</div>
-
-<div class="member">
-<img src="IMG_1582.jpg">
-</div>
-
-</div>
-
-</section>
 
 <!-- VIEW FLEET -->
 <section class="section">
