@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Routes - SpiceJet Virtual</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#ffffff;
+color:#222;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+/* NAVBAR */
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+background:#c40000;
+color:white;
+display:flex;
+align-items:center;
+padding:10px 6%;
+z-index:1000;
+}
+
+.navbar h1{
+font-size:18px;
+margin-right:30px;
+white-space:nowrap;
+}
+
+.menu{
+display:flex;
+gap:20px;
+overflow-x:auto;
+flex:1;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+white-space:nowrap;
+font-size:14px;
+}
+
+/* MAIN */
+main{
+flex:1;
+padding-top:80px;
+text-align:center;
+}
+
+/* INTRO */
+.route-intro{
+padding:20px 8%;
+}
+
+.intro-heading{
+color:#c40000;
+margin-bottom:10px;
+}
+
+.intro-text{
+max-width:700px;
+margin:0 auto 20px;
+line-height:1.6;
+opacity:0.85;
+}
+
+/* IMAGE */
+.route-image{
+width:90%;
+max-width:420px;
+aspect-ratio:1/1;
+margin:0 auto 30px;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.route-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* TABLE */
+.table-container{
+overflow-x:auto;
+padding:0 8%;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:700px;
+background:white;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+border-radius:10px;
+overflow:hidden;
+}
+
+th{
+background:#c40000;
+color:white;
+padding:14px;
+font-size:14px;
+}
+
+td{
+padding:12px;
+border-bottom:1px solid #eee;
+font-size:14px;
+}
+
+tr:hover{
+background:#fff3f3;
+}
+
+/* BUTTON */
+.cta-btn{
+margin:40px auto;
+display:block;
+padding:14px 35px;
+font-size:16px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg,#c40000,#ff4d4d);
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+.cta-btn:hover{
+transform:scale(1.08);
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* FOOTER */
+.footer{
+background:#c40000;
+color:white;
+padding:25px 15px;
+text-align:center;
+font-size:14px;
+line-height:1.6;
+margin-top:auto;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+<h1>✈ SpiceJet Virtual</h1>
+
+<div class="menu">
+<a href="index.html">Home</a>
+<a href="fleet.html">Fleet</a>
+<a href="hubs.html">Hubs</a>
+<a href="staff.html">Staff</a>
+<a href="ranks.html">Ranks</a>
+<a href="apply.html">Apply</a>
+</div>
+</nav>
+
+<!-- MAIN -->
+<main>
+
+<!-- INTRO -->
+<section class="route-intro">
+
+<h2 class="intro-heading">Our Route Network</h2>
+
+<p class="intro-text">
+These are the routes operated by SpiceJet Virtual across domestic and international sectors. 
+Our network connects major hubs with a variety of destinations, offering realistic airline operations and diverse flying experiences.
+</p>
+
+<div class="route-image">
+<img src="Screenshot_2026-04-26-12-22-23-409_com.android.chrome-edit.jpg">
+</div>
+
+</section>
+
+<!-- TABLE -->
+<div class="table-container">
+
+<table>
+
+<tr>
+<th>Departure</th>
+<th>Arrival</th>
+<th>EFT</th>
+<th>Distance (NM)</th>
+<th>Aircraft</th>
+</tr>
+
+<tr><td>Mumbai</td><td>Delhi</td><td>2h 10m</td><td>620</td><td>B737 MAX 8</td></tr>
+<tr><td>Mumbai</td><td>Dubai</td><td>3h 10m</td><td>1040</td><td>B737 MAX 8</td></tr>
+<tr><td>Mumbai</td><td>Chennai</td><td>1h 50m</td><td>560</td><td>B737 MAX 8</td></tr>
+<tr><td>Mumbai</td><td>Goa</td><td>1h 00m</td><td>230</td><td>Q400</td></tr>
+<tr><td>Mumbai</td><td>Abu Dhabi</td><td>3h 15m</td><td>1100</td><td>B737 MAX 8</td></tr>
+<tr><td>Mumbai</td><td>Kolkata</td><td>2h 45m</td><td>880</td><td>B737 MAX 8</td></tr>
+
+<tr><td>Delhi</td><td>Bangalore</td><td>2h 50m</td><td>940</td><td>B737 MAX 8</td></tr>
+<tr><td>Bangalore</td><td>Kolkata</td><td>2h 30m</td><td>840</td><td>B737 MAX 8</td></tr>
+<tr><td>Bangalore</td><td>Pune</td><td>1h 20m</td><td>420</td><td>Q400</td></tr>
+<tr><td>Delhi</td><td>Kolkata</td><td>2h 15m</td><td>700</td><td>B737 MAX 8</td></tr>
+<tr><td>Kolkata</td><td>Chennai</td><td>2h 10m</td><td>680</td><td>B737 MAX 8</td></tr>
+<tr><td>Delhi</td><td>Chennai</td><td>2h 50m</td><td>950</td><td>B737-900ER</td></tr>
+<tr><td>Chennai</td><td>Bangalore</td><td>1h 00m</td><td>160</td><td>Q400</td></tr>
+
+<tr><td>Delhi</td><td>Dubai</td><td>3h 30m</td><td>1180</td><td>B737 MAX 8</td></tr>
+<tr><td>Pune</td><td>Dubai</td><td>3h 20m</td><td>1120</td><td>B737 MAX 8</td></tr>
+<tr><td>Bangalore</td><td>Dubai</td><td>3h 50m</td><td>1450</td><td>B737 MAX 8</td></tr>
+<tr><td>Kolkata</td><td>Dubai</td><td>4h 50m</td><td>2100</td><td>B737-900ER</td></tr>
+<tr><td>Chennai</td><td>Dubai</td><td>4h 20m</td><td>1850</td><td>B737-900ER</td></tr>
+
+<tr><td>Bangalore</td><td>Jaipur</td><td>2h 20m</td><td>780</td><td>B737 MAX 8</td></tr>
+<tr><td>Chennai</td><td>Jaipur</td><td>2h 40m</td><td>900</td><td>B737 MAX 8</td></tr>
+<tr><td>Delhi</td><td>Najaf</td><td>4h 10m</td><td>1700</td><td>B737-900ER</td></tr>
+
+<tr><td>Mumbai</td><td>Najaf</td><td>3h 45m</td><td>1550</td><td>B737 MAX 8</td></tr>
+<tr><td>Jaipur</td><td>Ahmedabad</td><td>1h 15m</td><td>330</td><td>Q400</td></tr>
+<tr><td>Bangalore</td><td>Ahmedabad</td><td>2h 00m</td><td>650</td><td>B737 MAX 8</td></tr>
+<tr><td>Mumbai</td><td>Lucknow</td><td>2h 20m</td><td>680</td><td>B737 MAX 8</td></tr>
+<tr><td>Chennai</td><td>Lucknow</td><td>2h 45m</td><td>900</td><td>B737 MAX 8</td></tr>
+<tr><td>Chennai</td><td>Cochin</td><td>1h 00m</td><td>150</td><td>Q400</td></tr>
+<tr><td>Bangalore</td><td>Goa</td><td>1h 10m</td><td>200</td><td>Q400</td></tr>
+<tr><td>Delhi</td><td>Leh</td><td>1h 15m</td><td>300</td><td>B737 MAX 8</td></tr>
+<tr><td>Kolkata</td><td>Kathmandu</td><td>1h 30m</td><td>420</td><td>Q400</td></tr>
+
+<tr><td>Delhi</td><td>Port Blair</td><td>4h 00m</td><td>1350</td><td>B737 MAX 8</td></tr>
+
+<!-- NEW ROUTS -->
+<tr><td>Delhi</td><td>Sharjah</td><td>3h 20m</td><td>1100</td><td>B737 MAX 8</td></tr>
+<tr><td>Mumbai</td><td>Sharjah</td><td>3h 00m</td><td>1000</td><td>B737 MAX 8</td></tr>
+<tr><td>Delhi</td><td>Phuket</td><td>4h 30m</td><td>1800</td><td>B737-900ER</td></tr>
+<tr><td>Mumbai</td><td>Phuket</td><td>4h 10m</td><td>1700</td><td>B737-900ER</td></tr>
+
+</table>
+
+</div>
+
+<!-- BUTTON -->
+<a href="ranks.html">
+<button class="cta-btn">Rank System</button>
+</a>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+© SpiceJet Virtual is an independent Virtual Airline that is not affiliated with Infinite Flight or any real-world aviation service. We have no connection or affiliation with SpiceJet Airlines or any real-world Airline.
+</footer>
+
+</body>
+</html>
