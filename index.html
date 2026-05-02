@@ -83,16 +83,34 @@ background:rgba(255,255,255,0.2);
 }
 
 /* HERO */
-.hero{
+  .hero{
+position:relative;
 height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
+overflow:hidden;
+}
+
+/* IMAGE QUALITY FIX */
+.hero-img{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+object-fit:cover;
+object-position:center;
+
+image-rendering:auto;
+
+z-index:0;
+}
+
+/* TEXT */
+.hero-content{
+position:relative;
+z-index:1;
 color:white;
-background:url('Screenshot_20260302_162343_com.infiniteflight.dev2.jpg');
-background-size:cover;
-background-position:center;
+text-align:center;
 }
 
 .hero h2{
@@ -225,10 +243,14 @@ font-size:32px;
 
 <!-- HERO -->
 <section class="hero">
-<div>
+
+<img src="Screenshot_20260302_162343_com.infiniteflight.dev2.jpg" class="hero-img">
+
+<div class="hero-content">
 <h2>Welcome to SpiceJet Virtual</h2>
 <p>India's virtual airline in Infinite Flight</p>
 </div>
+
 </section>
 
 <!-- ABOUT -->
