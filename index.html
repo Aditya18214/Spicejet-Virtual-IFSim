@@ -44,7 +44,27 @@ align-items:center;
 padding:10px 6%;
 z-index:1000;
 }
+.menu a{
+color:white;
+text-decoration:none;
+white-space:nowrap;
+font-size:14px;
+padding:6px 10px;
+border-radius:6px;
+transition:0.3s;
+}
 
+/* HOVER */
+.menu a:hover{
+background:rgba(255,255,255,0.2);
+}
+
+/* ACTIVE PAGE 🔥 */
+.menu a.active{
+background:white;
+color:#c40000;
+font-weight:600;
+}
 /* LOGO */
 .navbar h1{
 font-size:18px;
@@ -235,6 +255,7 @@ font-size:32px;
   <h1>✈ SpiceJet Virtual</h1>
 
   <div class="menu">
+    <a href="index.html" class="active">Home</a>
     <a href="fleet.html">Fleet</a>
     <a href="hubs.html">Hubs</a>
     <a href="routes.html">Routes</a>
