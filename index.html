@@ -87,9 +87,14 @@ background:rgba(255,255,255,0.2);
 position:relative;
 height:100vh;
 overflow:hidden;
+
+display:flex;
+align-items:flex-end;   /* pushes text down */
+justify-content:center;
+padding-bottom:60px;
 }
 
-/* IMAGE QUALITY FIX */
+/* IMAGE FIX */
 .hero-img{
 position:absolute;
 top:0;
@@ -98,7 +103,7 @@ width:100%;
 height:100%;
 
 object-fit:cover;
-object-position:center;
+object-position:center 30%;  /* adjust focus */
 
 image-rendering:auto;
 
@@ -113,15 +118,27 @@ color:white;
 text-align:center;
 }
 
+/* MOBILE FIX */
+@media(max-width:600px){
+
+.hero{
+padding-bottom:40px;
+}
+
 .hero h2{
-font-size:45px;
+font-size:28px;
 }
 
 .hero p{
-margin-top:15px;
-font-size:18px;
+font-size:14px;
 }
 
+/* adjust for mobile */
+.hero-img{
+object-position:center 35%;
+}
+
+}
 /* SECTION */
 .section{
 padding:80px 10%;
