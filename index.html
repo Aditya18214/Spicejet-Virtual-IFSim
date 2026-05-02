@@ -83,61 +83,36 @@ background:rgba(255,255,255,0.2);
 }
 
 /* HERO */
-  .hero{
-position:relative;
-height:100vh;
-overflow:hidden;
-
-display:flex;
-align-items:flex-end;   /* pushes text down */
-justify-content:center;
-padding-bottom:60px;
-}
-
-/* IMAGE FIX */
-.hero-img{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-
-object-fit:cover;
-object-position:center 30%;  /* adjust focus */
-
-image-rendering:auto;
-
-z-index:0;
-}
-
-/* TEXT */
-.hero-content{
-position:relative;
-z-index:1;
-color:white;
+.hero{
+margin-top:60px; /* below navbar */
 text-align:center;
 }
 
-/* MOBILE FIX */
-@media(max-width:600px){
-
-.hero{
-padding-bottom:40px;
-}
-
-.hero h2{
-font-size:28px;
-}
-
-.hero p{
-font-size:14px;
-}
-
-/* adjust for mobile */
+/* IMAGE — KEEP ORIGINAL RATIO */
 .hero-img{
-object-position:center 35%;
+width:100%;
+max-width:1000px;
+aspect-ratio:16/9;   /* 🔥 keeps perfect shape */
+object-fit:cover;
+
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
+/* TEXT BELOW IMAGE */
+.hero-text{
+margin-top:20px;
+}
+
+.hero-text h2{
+color:#c40000;
+font-size:32px;
+}
+
+.hero-text p{
+margin-top:8px;
+font-size:16px;
+color:#555;
 }
 /* SECTION */
 .section{
@@ -263,7 +238,7 @@ font-size:32px;
 
 <img src="Screenshot_20260302_162343_com.infiniteflight.dev2.jpg" class="hero-img">
 
-<div class="hero-content">
+<div class="hero-text">
 <h2>Welcome to SpiceJet Virtual</h2>
 <p>India's virtual airline in Infinite Flight</p>
 </div>
