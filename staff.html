@@ -101,28 +101,49 @@ opacity:0.8;
 
 /* STAFF GRID */
 .staff{
+.staff{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:25px;
-padding:0 8%;
+margin-top:30px;
 }
 
 .member{
+background:#f6f6f6;
 border-radius:15px;
 overflow:hidden;
+text-align:center;
+padding-bottom:15px;
+transition:0.3s;
+}
+
+.member:hover{
+transform:translateY(-5px);
 box-shadow:0 10px 25px rgba(0,0,0,0.15);
-transition:0.4s;
 }
 
 .member img{
 width:100%;
-display:block;
-transition:0.4s;
+height:220px;
+object-fit:cover;
 }
 
-.member:hover img{
-transform:scale(1.05);
+/* BUTTON */
+.ifc-btn{
+margin-top:10px;
+padding:10px 20px;
+border:none;
+border-radius:20px;
+background:linear-gradient(45deg,#c40000,#ff4d4d);
+color:white;
+font-size:14px;
+cursor:pointer;
+transition:0.3s;
 }
+
+.ifc-btn:hover{
+transform:scale(1.08);
+  }
 
 /* BUTTON */
 .cta-btn{
@@ -184,30 +205,43 @@ Our staff team ensures smooth operations of SpiceJet Virtual. They guide pilots,
 
 <!-- STAFF -->
 <div class="staff">
+<div class="staff">
 
-<a href="https://share.google/iCduKgBZqIYwsGWAw">
+<!-- MEMBER 1 -->
 <div class="member">
 <img src="D0024F80-A81C-47B7-B8D1-9B3E214AA7D0.jpg">
-</div>
+
+<a href="https://share.google/Wfp3ISzCdXaUDSxY2" target="_blank">
+<button class="ifc-btn">View IFC Profile</button>
 </a>
+</div>
+
+<!-- MEMBER 2 -->
+<div class="member">
+<img src="A2842529-E8A3-4077-9D64-7148BE89DAEA.jpg">
 
 <a href="https://share.google/Sr6uAiwFE5jeLmGtd" target="_blank">
-<div class="member">
-<img src="5AE05BD0-710F-4948-8EB6-7CEEE346BA67.jpg">
-</div>
+<button class="ifc-btn">View IFC Profile</button>
 </a>
+</div>
 
-<a href="https://share.google/BvfLMeVV5pgjwECGs" target="_blank">
+<!-- MEMBER 3 -->
 <div class="member">
 <img src="97B9B72C-04BB-4030-9F4E-BEF78481F501.jpg">
-</div>
-</a>
 
-<a href="https://share.google/PlYVXnwDkvvQCng4y" target="_blank">
+<a href="https://share.google/BvfLMeVV5pgjwECGs" target="_blank">
+<button class="ifc-btn">View IFC Profile</button>
+</a>
+</div>
+
+<!-- MEMBER 4 -->
 <div class="member">
 <img src="IMG_1582.jpg">
-</div>
+
+<a href="https://share.google/PlYVXnwDkvvQCng4y" target="_blank">
+<button class="ifc-btn">View IFC Profile</button>
 </a>
+</div>
 
 </div>
 
